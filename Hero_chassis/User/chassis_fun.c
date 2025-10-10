@@ -148,11 +148,21 @@ DmMotorInitConfig_s yaw_motor_config={
 
 DmMotorInitConfig_s rammer_motor_config={
 		.control_mode = DM_VELOCITY,
+		.topic_name = "rammer_motor",
 		.can_config ={
-					.can_number=1,
+					.can_number=2,
 					.tx_id = 0x05, 
 					.rx_id = 0x15,
 		},
+		.parameters = {
+        .pos_max = 3.141593f,
+        .vel_max = 20.0f,   
+        .tor_max = 18.0f,
+        .kp_max = 0.0f,
+        .kd_max = 0.0f,
+        .kp_int = 0.0f,
+        .kd_int = 0.0f,
+    },
 		.velocity_pid_config={
 				.kp=0.35f,
 				.ki=0.01f,
